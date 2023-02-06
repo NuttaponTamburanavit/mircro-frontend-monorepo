@@ -106,11 +106,12 @@ const data: DataType[] = [
   },
 ];
 
-const CustomeTable = (theme?: ThemeConfig) => {
+const CustomeTable = ({ theme = undefined }) => {
 
   const [top, setTop] = useState<TablePaginationPosition>('topLeft');
   const [bottom, setBottom] = useState<TablePaginationPosition>('bottomRight');
 
+  console.log({ theme })
   return (
     <ConfigProvider theme={theme}>
       <div>
