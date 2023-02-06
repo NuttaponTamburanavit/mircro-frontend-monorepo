@@ -10,10 +10,12 @@ importers:
 
   packages/admin-web:
     specifiers:
+      '@ant-design/icons': ^5.0.1
       '@next/font': 13.1.6
       '@types/node': 18.11.19
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
+      antd: ^5.1.7
       eslint: 8.33.0
       eslint-config-next: 13.1.6
       next: 13.1.6
@@ -21,10 +23,12 @@ importers:
       react-dom: 18.2.0
       typescript: 4.9.5
     dependencies:
+      '@ant-design/icons': 5.0.1_biqbaboplfbrettd7655fr4n2y
       '@next/font': 13.1.6
       '@types/node': 18.11.19
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
+      antd: 5.1.7_biqbaboplfbrettd7655fr4n2y
       eslint: 8.33.0
       eslint-config-next: 13.1.6_4vsywjlpuriuw3tl5oq6zy5a64
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
@@ -62,10 +66,12 @@ importers:
 
   packages/training-center-web:
     specifiers:
+      '@ant-design/icons': ^5.0.1
       '@next/font': 13.1.6
       '@types/node': 18.11.19
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
+      antd: ^5.1.7
       eslint: 8.33.0
       eslint-config-next: 13.1.6
       next: 13.1.6
@@ -73,10 +79,12 @@ importers:
       react-dom: 18.2.0
       typescript: 4.9.5
     dependencies:
+      '@ant-design/icons': 5.0.1_biqbaboplfbrettd7655fr4n2y
       '@next/font': 13.1.6
       '@types/node': 18.11.19
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
+      antd: 5.1.7_biqbaboplfbrettd7655fr4n2y
       eslint: 8.33.0
       eslint-config-next: 13.1.6_4vsywjlpuriuw3tl5oq6zy5a64
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
