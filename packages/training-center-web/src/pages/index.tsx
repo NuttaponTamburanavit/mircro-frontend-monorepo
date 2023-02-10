@@ -53,6 +53,30 @@ export default function Home() {
     }
   }
 
+  const data: any[] = [
+    {
+      key: '1',
+      name: 'TP - Jane',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+      tags: ['nice', 'developer'],
+    },
+    {
+      key: '2',
+      name: 'TP - Morroc',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+      tags: ['loser'],
+    },
+    {
+      key: '3',
+      name: 'TP - Lodash',
+      age: 32,
+      address: 'Sydney No. 1 Lake Park',
+      tags: ['cool', 'teacher'],
+    },
+  ];
+
   return (
     <>
       <Head>
@@ -82,7 +106,7 @@ export default function Home() {
             <Header style={{ padding: 0, background: colorBgContainer }} />
             <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
               <div style={{ padding: 24, textAlign: 'center', background: colorBgContainer }}>
-                <Table theme={defaultTheme} />
+                <Table data={data} theme={defaultTheme} />
 
                 <p>long content</p>
                 {

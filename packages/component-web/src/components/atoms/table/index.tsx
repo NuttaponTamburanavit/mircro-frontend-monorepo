@@ -50,6 +50,7 @@ const columns: ColumnsType<DataType> = [
     dataIndex: 'address',
     key: 'address',
   },
+  Table.EXPAND_COLUMN,
   {
     title: 'Tags',
     key: 'tags',
@@ -82,31 +83,7 @@ const columns: ColumnsType<DataType> = [
   },
 ];
 
-const data: DataType[] = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sydney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
-
-const CustomeTable = ({ theme = undefined }) => {
+const CustomeTable = ({ data = [], theme = undefined }) => {
 
   const [top, setTop] = useState<TablePaginationPosition>('topLeft');
   const [bottom, setBottom] = useState<TablePaginationPosition>('bottomRight');
@@ -133,7 +110,16 @@ const CustomeTable = ({ theme = undefined }) => {
             setBottom(e.target.value);
           }}
         />
-        <Table columns={columns} pagination={{ position: [top, bottom] }} dataSource={data} />
+        <Table 
+          columns={columns} 
+          pagination={{ position: [top, bottom] }} 
+          dataSource={data} 
+          expandable={{
+            expandedRowRender: () => {
+              return '...';
+            }
+          }}
+        />
       </div>
     </ConfigProvider>
   )
