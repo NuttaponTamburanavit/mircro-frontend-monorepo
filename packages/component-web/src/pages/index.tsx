@@ -1,44 +1,27 @@
 import React from 'react';
 import Head from 'next/head';
-import type { MenuProps } from 'antd';
-import { Layout, Menu, theme } from 'antd';
-import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
-import { Inter } from '@next/font/google'
+import { Layout, theme, ConfigProvider } from 'antd';
 
-import Table from '@/components/atoms/table';
+import Table from '@components/atoms/table';
+import MenuSider from '@components/organisms/menuSider';
+import 'antd/dist/reset.css';
 
-const inter = Inter({ subsets: ['latin'] })
-const { Header, Content, Footer, Sider } = Layout;
-
-
-const items: MenuProps['items'] = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+const { Header, Content, Footer } = Layout;
 
 export default function Home() {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  const defaultTheme = {
+    "token": {
+      "colorPrimary": "#4a86f6",
+      "colorInfo": "#4a86f6",
+      "borderRadius": 4,
+      "borderRadiusLG": 4,
+      "borderRadiusXS": 4
+    }
+  }
 
   return (
     <>
@@ -49,41 +32,20 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout hasSider>
-        <Sider
-          style={{
-            overflow: 'auto',
-            height: '100vh',
-            position: 'fixed',
-            left: 0,
-            top: 0,
-            bottom: 0,
-          }}
-        >
-          <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
-        </Sider>
-        <Layout className="site-layout" style={{ marginLeft: 200, minHeight: '100vh' }}>
-          <Header style={{ padding: 0, background: colorBgContainer }} />
-          <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-            <div style={{ padding: 24, textAlign: 'center', background: colorBgContainer }}>
-              <Table />
-
-              {/* <p>long content</p>
-              {
-                // indicates very long content
-                Array.from({ length: 100 }, (_, index) => (
-                  <React.Fragment key={index}>
-                    {index % 20 === 0 && index ? 'more' : '...'}
-                    <br />
-                  </React.Fragment>
-                ))
-              } */}
-            </div>
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
+      <ConfigProvider theme={defaultTheme}>
+        <Layout hasSider>
+          <MenuSider />
+          <Layout className="site-layout" style={{ marginLeft: 200, minHeight: '100vh' }}>
+            <Header style={{ padding: 0, background: colorBgContainer }} />
+            <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
+              <div style={{ padding: 24, textAlign: 'center', background: colorBgContainer }}>
+                <Table />
+              </div>
+            </Content>
+            <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
+          </Layout>
         </Layout>
-      </Layout>
+      </ConfigProvider>
     </>
   )
 }
