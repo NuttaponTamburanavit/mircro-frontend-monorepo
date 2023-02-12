@@ -35,7 +35,10 @@ export default function Home() {
       <ConfigProvider theme={defaultTheme}>
         <Layout hasSider>
           <MenuSider />
-          <Layout className="site-layout" style={{ marginLeft: 200, minHeight: '100vh' }}>
+          <Layout
+            className="site-layout"
+            style={{ marginLeft: 200, minHeight: '100vh' }}
+          >
             <Header style={{ padding: 0, background: colorBgContainer }} />
             <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
               <div style={{ padding: 24, textAlign: 'center', background: colorBgContainer }}>

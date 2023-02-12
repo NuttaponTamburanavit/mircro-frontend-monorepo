@@ -1,22 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 import type { MenuProps } from 'antd';
-// import styles from '@/styles/Home.module.css'
 import { Layout, Menu, theme, ConfigProvider } from 'antd';
 import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  AppstoreOutlined, BarChartOutlined, CloudOutlined, ShopOutlined, TeamOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined,
 } from '@ant-design/icons';
-import { Inter } from '@next/font/google'
 import dynamic from 'next/dynamic';
 
-const Table = dynamic(() => import("remote/table"), {
+const Table = dynamic(() => import('remote/table'), {
   ssr: false,
 });
 
@@ -44,12 +35,12 @@ export default function Home() {
   } = theme.useToken();
 
   const defaultTheme = {
-    "token": {
-      "colorPrimary": "#ff7c82",
-      "colorInfo": "#ff7c82",
-      "borderRadius": 12,
-      "borderRadiusLG": 16,
-      "borderRadiusXS": 8
+    'token': {
+      'colorPrimary': '#ff7c82',
+      'colorInfo': '#ff7c82',
+      'borderRadius': 12,
+      'borderRadiusLG': 16,
+      'borderRadiusXS': 8
     }
   }
 

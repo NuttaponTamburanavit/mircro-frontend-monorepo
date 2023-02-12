@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Table, Radio, Space, Tag, ConfigProvider } from 'antd';
-import { ThemeConfig } from 'antd/es/config-provider';
 import type { ColumnsType } from 'antd/es/table';
 
 type TablePaginationPosition =
@@ -109,10 +108,10 @@ const CustomeTable = ({ data = [], theme = undefined }) => {
             setBottom(e.target.value);
           }}
         />
-        <Table 
-          columns={columns} 
-          pagination={{ position: [top, bottom] }} 
-          dataSource={data} 
+        <Table
+          columns={columns}
+          pagination={{ position: [top, bottom] }}
+          dataSource={data}
           expandable={{
             expandedRowRender: () => {
               return '...';
