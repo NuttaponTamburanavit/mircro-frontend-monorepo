@@ -1,10 +1,18 @@
-import React from 'react';
+import {
+  AppstoreOutlined,
+  BarChartOutlined,
+  CloudOutlined,
+  ShopOutlined,
+  TeamOutlined,
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from '@ant-design/icons';
+import { ConfigProvider, Layout, Menu, theme } from 'antd';
+
 import Head from 'next/head';
 import type { MenuProps } from 'antd';
-import { Layout, Menu, theme, ConfigProvider } from 'antd';
-import {
-  AppstoreOutlined, BarChartOutlined, CloudOutlined, ShopOutlined, TeamOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined,
-} from '@ant-design/icons';
+import React from 'react';
 import dynamic from 'next/dynamic';
 
 const Table = dynamic(() => import('remote/table'), {
